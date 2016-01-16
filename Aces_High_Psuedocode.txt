@@ -1,0 +1,30 @@
+Meeting 1 - 1/15/2016
+
+==========
+BEGIN GAME
+==========
+
+1. Round of 4 cards dealt
+
+2. User makes selection of card to remove
+
+3. If success, remove & draw board; otherwise error and return to 2.
+
+4. If open space, prompt user to optionally move a card to empty space
+
+5. Return to 2.
+
+6. When user presses deal button return to 1.
+
+7. When out of cards to deal finish
+
+====
+Deck
+====
+
+Implemented as hash table of size 13; each object in hash table is a linked list of size four containing all four suited cards of each value.
+
+=====
+Board
+=====
+
