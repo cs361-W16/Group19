@@ -1,25 +1,33 @@
-public class card{
+package controllers;
 
-    /*
-        fields
-     */
-    public int number;
-    public int suit;
 
-    /*
+public class card
+{
 
-    methods: compare the card
-     */
-    public int compare(int num,int suit)
+
+    public int num;
+    public char suit;
+
+    //default constructor
+    public card()
     {
-        if(num==card.num)
-        {
-            if(suit==card.suit)
-                return 1;
-            else
-                return 0;
-        }
-        else
-            return 0;
+        num = 2;
+        suit = 'S';
     }
+
+    //custom constructor
+    public card(int numToSet, char suitToSet)
+    {
+        num = numToSet;
+        suit = suitToSet;
+    }
+
+    //helper function to set number of card to desired input
+    public void setNum(int numToSet)
+    {
+        num = numToSet;
+    }
+
+    //helper function to set suit of card to desired input
+    public void setSuit(char suitToSet) { suit = suitToSet; }
 }
