@@ -16,9 +16,10 @@
 
 package controllers;
 
+import models.board;
 import ninja.Result;
 import ninja.Results;
-
+import ninja.Context;
 import com.google.inject.Singleton;
 
 
@@ -34,7 +35,8 @@ public class ApplicationController {
     }
 
     public Result restartAcesUp() {
-        return Results.json().render();
+        board game = new board();
+        return Results.json().render(game);
     }
 
 }
