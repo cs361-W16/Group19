@@ -6,9 +6,9 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * Created by Isaac on 1/22/2016.
+ * Created by Kanna on 1/22/2016.
  */
-public class deckTest {
+public class deckModelsTest {
 
     @Test
     public void testDeckExists()
