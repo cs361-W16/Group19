@@ -1,6 +1,7 @@
-package controllers;
+package models;
 
 
+import models.board;
 import org.junit.Test;
 
 import ninja.NinjaDocTester;
@@ -28,7 +29,7 @@ public class boardTest extends NinjaDocTester
         assert playBoard.boardList.get(3).peekLast().num == 0;
     }
 
-    @Testt
+    @Test
     public void testBoardInitialSize()
     {
         board playBoard = new board();

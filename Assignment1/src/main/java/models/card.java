@@ -1,9 +1,8 @@
-package controllers;
+package models;
 
 
 public class card
 {
-
 
     public int num;
     public char suit;
@@ -11,8 +10,8 @@ public class card
     //default constructor
     public card()
     {
-        num = 2;
-        suit = 'S';
+        num = 0;
+        suit = ' ';
     }
 
     //custom constructor

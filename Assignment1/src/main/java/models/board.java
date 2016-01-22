@@ -1,10 +1,7 @@
-package controllers;
+package models;
 
 import java.io.Serializable;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 
 //board class; dunno what Serializable is but no code break so ok?
 public class board implements Serializable
@@ -26,11 +23,11 @@ public class board implements Serializable
     //add the four columns to the linked list
     public void addFourColumns()
     {
-        LinkedList<card> firstCol = new LinkedList<>();
-        boardList.add(firstCol);
-        boardList.add(firstCol);
-        boardList.add(firstCol);
-        boardList.add(firstCol);
+        LinkedList<card> sampleCol = new LinkedList<>();
+        for (int i = 0; i < 4; i++)
+        {
+            boardList.add(sampleCol);
+        }
     }
 
     //adds the two of spades (default card?) to the column colToAddTo
@@ -41,7 +38,8 @@ public class board implements Serializable
     }
 
     //adds a custom card to the column colToAddTo
-    public void addCardToColumn(int colToAddTo, card cardToAdd) {
+    public void addCardToColumn(int colToAddTo, card cardToAdd)
+    {
         boardList.get(colToAddTo).add(cardToAdd);
     }
 
@@ -49,7 +47,9 @@ public class board implements Serializable
     public boolean checkNums(int checkCol, int removeCol)
     {
         if (boardList.get(0).get(0).num > boardList.get(0).get(1).num)
+        {
             return true;
+        }
         else return false;
     }
 
