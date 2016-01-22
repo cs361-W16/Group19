@@ -21,6 +21,7 @@ public class board implements Serializable
         masterDeck.create_deck();
     }
 
+
     //add the four columns to the linked list
     public void addFourColumns()
     {
@@ -31,12 +32,19 @@ public class board implements Serializable
         }
     }
 
+    public void addFourCardsToColumns()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            addCardToColumn(i, getCardFromDeck());
+        }
+    }
+
     //adds a custom card to the column colToAddTo
     public void addCardToColumn(int colToAddTo, card cardToAdd)
     {
-        boardList.get(colToAddTo).add(cardToAdd);
+        boardList.get(colToAddTo).addFirst(cardToAdd);
     }
-
 
 
     public card getCardFromDeck()
