@@ -24,14 +24,14 @@ public class board implements Serializable
     {
         //possibly unnecessary code? but don't know how to work around it
         ArrayList<card> firstCol = new ArrayList<>();
-        ArrayList<card> secondCol = new ArrayList<>();
+        /*ArrayList<card> secondCol = new ArrayList<>();
         ArrayList<card> thirdCol = new ArrayList<>();
-        ArrayList<card> fourthCol = new ArrayList<>();
+        ArrayList<card> fourthCol = new ArrayList<>();*/
         //add four columns/arrays of cards to the linked list
         boardList.add(firstCol);
-        boardList.add(secondCol);
-        boardList.add(thirdCol);
-        boardList.add(fourthCol);
+        boardList.add(firstCol);
+        boardList.add(firstCol);
+        boardList.add(firstCol);
     }
 
     //adds the two of spades (default card?) to the column colToAddTo
@@ -47,6 +47,19 @@ public class board implements Serializable
     {
         card cardToAdd = new card(cardNum, cardSuit);
         boardList.get(colToAddTo).add(cardToAdd);
+    }
+
+    public boolean checkIfRemovable(int checkCol, int removeCol)
+    {
+        if (boardList.get(checkCol).get(boardList.size()-1).suit == boardList.get(removeCol).get(boardList.size()-1).suit)
+        {
+            if (boardList.get(checkCol).get(boardList.size()-1).num > boardList.get(removeCol).get(boardList.size()-1).num)
+            {
+                return true;
+            }
+            else return false;
+        }
+        else return false;
     }
 
 }

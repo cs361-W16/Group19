@@ -51,6 +51,23 @@ public class boardTest extends NinjaDocTester
         assert playBoard.boardList.get(0).get(0).suit == 'C';
     }
 
+    @Test
+    public void testCardFourAdd()
+    {
+        board playBoard = new board();
+        for (int i = 0; i < 4; i++)
+        {
+            playBoard.addDefaultCardToColumn(i);
+            assert playBoard.boardList.get(i).get(i).suit == 'S';
+            assert playBoard.boardList.get(i).get(i).num == 2;
+        }
+    }
+
+    public void testRemoveCard()
+    {
+        board playBoard = new board();
+    }
+
     /*@Test
     public void testAddCardToColumn()
     {
