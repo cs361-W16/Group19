@@ -49,7 +49,9 @@ public class board implements Serializable
 
     public card getCardFromDeck()
     {
+        board playBoard = new board();
         card newCardFromDeck = new card();
+        newCardFromDeck = playBoard.masterDeck.dealCardFromDeck();
         return newCardFromDeck;
     }
 }
