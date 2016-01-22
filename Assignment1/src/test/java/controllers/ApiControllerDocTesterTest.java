@@ -17,12 +17,11 @@
 package controllers;
 
 
-import org.junit.Test;
-
 import ninja.NinjaDocTester;
 import org.doctester.testbrowser.Request;
 import org.doctester.testbrowser.Response;
-import org.hamcrest.CoreMatchers;
+import org.junit.Test;
+
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertThat;
 
@@ -51,5 +50,13 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
         assertThat(response.payload, containsString("Aces Up"));
         assertThat(response.payload, containsString("columnOfCards"));
     }
+    @Test
+    public void testrestartAcesUp() {
+        Response response = makeRequest(
+                Request.GET().url(
+                        testServerUrl().path(URL_ACES_UP)));
 
+        assertThat(response.payload, containsString("Aces Up"));
+        assertThat(response.payload, containsString("columnOfCards"));
+    }
 }
