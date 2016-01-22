@@ -1,6 +1,7 @@
 package controllers;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -8,11 +9,14 @@ import java.util.List;
 //board class; dunno what Serializable is but no code break so ok?
 public class board implements Serializable
 {
-
     //declares new list; list contains arrays, which contain cards
-    public List<ArrayList<card>> boardList = new LinkedList<>();
+    public LinkedList<LinkedList<card>> boardList = new LinkedList<>();
 
-    //default constructor
+    //need copy constructor?
+
+    //need default constructor?
+
+    //constructor
     public board()
     {
         //initializes columns
@@ -22,12 +26,7 @@ public class board implements Serializable
     //add the four columns to the linked list
     public void addFourColumns()
     {
-        //possibly unnecessary code? but don't know how to work around it
-        ArrayList<card> firstCol = new ArrayList<>();
-        /*ArrayList<card> secondCol = new ArrayList<>();
-        ArrayList<card> thirdCol = new ArrayList<>();
-        ArrayList<card> fourthCol = new ArrayList<>();*/
-        //add four columns/arrays of cards to the linked list
+        LinkedList<card> firstCol = new LinkedList<>();
         boardList.add(firstCol);
         boardList.add(firstCol);
         boardList.add(firstCol);
@@ -35,31 +34,48 @@ public class board implements Serializable
     }
 
     //adds the two of spades (default card?) to the column colToAddTo
-    public void addDefaultCardToColumn(int colToAddTo)
-    {
+    public void addDefaultCardToColumn(int colToAddTo) {
 
         card cardToAdd = new card();
         boardList.get(colToAddTo).add(cardToAdd);
     }
 
     //adds a custom card to the column colToAddTo
-    public void addCardToColumn(int colToAddTo, int cardNum, char cardSuit)
-    {
-        card cardToAdd = new card(cardNum, cardSuit);
+    public void addCardToColumn(int colToAddTo, card cardToAdd) {
         boardList.get(colToAddTo).add(cardToAdd);
     }
 
-    public boolean checkIfRemovable(int checkCol, int removeCol)
+    //checks the first card in inputted columns for number removability (will be expanded to check top card in column)
+    public boolean checkNums(int checkCol, int removeCol)
     {
-        if (boardList.get(checkCol).get(boardList.size()-1).suit == boardList.get(removeCol).get(boardList.size()-1).suit)
+        if (boardList.get(0).get(0).num > boardList.get(0).get(1).num)
+            return true;
+        else return false;
+    }
+
+    //checks the first card in inputted columns for suit removability (will be expanded to check top card in column)
+    public boolean checkSuits(int checkCol, int removeCol)
+    {
+        if (boardList.get(checkCol).get(0).suit == boardList.get(removeCol).get(0).suit)
         {
-            if (boardList.get(checkCol).get(boardList.size()-1).num > boardList.get(removeCol).get(boardList.size()-1).num)
-            {
-                return true;
-            }
-            else return false;
+            return true;
         }
         else return false;
     }
 
+    //checks the first card in inputted columns for removability (will be expanded to check top card in column)
+    public boolean checkIfRemovable(int checkCol, int removeCol)
+    {
+        if (checkSuits(checkCol, removeCol) && checkNums(checkCol, removeCol))
+        {
+            return true;
+        }
+        else return false;
+    }
+
+    public card getCardFromDeck()
+    {
+        card newCardFromDeck = new card();
+        return newCardFromDeck;
+    }
 }
