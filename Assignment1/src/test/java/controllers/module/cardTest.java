@@ -13,8 +13,4 @@ Goals: make sure the card class can compare the input suit and number with the e
 public class cardTest extends NinjaDocTester {
 
 
-    @Test
-    public void testcompare_card(int number, char suit) {
-
-    }
 }
