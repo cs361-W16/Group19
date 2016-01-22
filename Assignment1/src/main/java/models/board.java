@@ -8,7 +8,7 @@ public class board implements Serializable
 {
     //declares new list; list contains arrays, which contain cards
     public LinkedList<LinkedList<card>> boardList = new LinkedList<>();
-
+    public deck masterDeck = new deck();
     //need copy constructor?
 
     //need default constructor?
@@ -18,6 +18,7 @@ public class board implements Serializable
     {
         //initializes columns
         addFourColumns();
+        masterDeck.create_deck();
     }
 
     //add the four columns to the linked list
@@ -30,12 +31,14 @@ public class board implements Serializable
         }
     }
 
+    //"legacy code"
+    /*
     //adds the two of spades (default card?) to the column colToAddTo
     public void addDefaultCardToColumn(int colToAddTo) {
 
         card cardToAdd = new card();
         boardList.get(colToAddTo).add(cardToAdd);
-    }
+    }*/
 
     //adds a custom card to the column colToAddTo
     public void addCardToColumn(int colToAddTo, card cardToAdd)
@@ -43,6 +46,8 @@ public class board implements Serializable
         boardList.get(colToAddTo).add(cardToAdd);
     }
 
+    //remove implemented elsewhere
+    /*
     //checks the first card in inputted columns for number removability (will be expanded to check top card in column)
     public boolean checkNums(int checkCol, int removeCol)
     {
@@ -51,8 +56,10 @@ public class board implements Serializable
             return true;
         }
         else return false;
-    }
+    }*/
 
+    //remove implemented elsewhere
+    /*
     //checks the first card in inputted columns for suit removability (will be expanded to check top card in column)
     public boolean checkSuits(int checkCol, int removeCol)
     {
@@ -61,9 +68,10 @@ public class board implements Serializable
             return true;
         }
         else return false;
-    }
+    }*/
 
-    //checks the first card in inputted columns for removability (will be expanded to check top card in column)
+    //remove implemented elsewhere
+    /* //checks the first card in inputted columns for removability (will be expanded to check top card in column)
     public boolean checkIfRemovable(int checkCol, int removeCol)
     {
         if (checkSuits(checkCol, removeCol) && checkNums(checkCol, removeCol))
@@ -71,7 +79,7 @@ public class board implements Serializable
             return true;
         }
         else return false;
-    }
+    }*/
 
     public card getCardFromDeck()
     {

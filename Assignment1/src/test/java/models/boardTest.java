@@ -37,6 +37,12 @@ public class boardTest extends NinjaDocTester
 
     }
 
+    @Test
+    public void testBoardContainsDeck()
+    {
+        board playBoard = new board();
+        assert playBoard.masterDeck.count() != 0;
+    }
 
 
 }
