@@ -54,7 +54,7 @@ public class boardTest extends NinjaDocTester
     }
 
     @Test
-    public void testAddCarToTop()
+    public void testAddCardToTop()
     {
         board playBoard = new board();
         card firstAddCard = new card(2,"spades");
