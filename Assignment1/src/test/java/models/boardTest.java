@@ -24,16 +24,6 @@ public class boardTest extends NinjaDocTester
     }
 
     @Test
-    public void addFourCardsToBoard()
-    {
-        board playBoard = new board();
-        playBoard.addFourCardsToColumns();
-        for (int i = 0; i < 4; i++)
-        {
-            assert playBoard.boardList.get        }
-    }
-
-    @Test
     public void testBoardInitialSize()
     {
         board playBoard = new board();
