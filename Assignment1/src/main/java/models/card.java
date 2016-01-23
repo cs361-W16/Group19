@@ -6,9 +6,15 @@ import java.util.Random;
 
 public class card extends deck{
 
+<<<<<<< HEAD
     /*
         fields
      */
+=======
+   /*
+       fields
+    */
+>>>>>>> fd69c54dd5e063977ae1eb5ca2de77a48170dd62
 
     public int num;
     public String suit;
@@ -28,6 +34,16 @@ public class card extends deck{
     }
 
 
+<<<<<<< HEAD
+=======
+    //copy constructor
+    public card(card acard){
+        this.num = acard.num;
+        this.suit = acard.suit;
+    }
+
+
+>>>>>>> fd69c54dd5e063977ae1eb5ca2de77a48170dd62
     //compare function of the number and suit to determine if the number are the same
     public int compare(int num, String suit)
     {
@@ -43,3 +59,5 @@ public class card extends deck{
             return 0;
     }
 }
+
+
