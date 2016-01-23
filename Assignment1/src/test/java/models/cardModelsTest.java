@@ -38,7 +38,7 @@ public class cardModelsTest {
     {
         int num = 2;
         String suit = "heart";
-        card compareCard = new card(2, "spades");
+        card compareCard = new card(2, "spade");
         assertNotEquals(1, compareCard.compare(num,suit));
     }
 
