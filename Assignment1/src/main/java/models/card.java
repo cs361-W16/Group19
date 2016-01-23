@@ -28,13 +28,6 @@ public class card extends deck{
     }
 
 
-    //copy constructor
-    public card(card acard){
-        this.num = acard.num;
-        this.suit = acard.suit;
-    }
-
-
     //compare function of the number and suit to determine if the number are the same
     public int compare(int num, String suit)
     {
