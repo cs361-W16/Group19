@@ -37,10 +37,13 @@ public class board implements Serializable
     //adds a custom card to the column colToAddTo
     public void addCardToColumn(int colToAddTo, card cardToAdd)
     {
+
         boardList.get(colToAddTo).addFirst(cardToAdd);
     }
 
 
-
-
+    //function to remove a card from a given column number
+    public int discard(int column){
+        boardList.get(column).remove();
+    }
 }
