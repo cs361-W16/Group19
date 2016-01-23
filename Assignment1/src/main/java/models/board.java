@@ -32,13 +32,7 @@ public class board implements Serializable
         }
     }
 
-    public void addFourCardsToColumns()
-    {
-        for (int i = 0; i < 4; i++)
-        {
-            addCardToColumn(i, getCardFromDeck());
-        }
-    }
+
 
     //adds a custom card to the column colToAddTo
     public void addCardToColumn(int colToAddTo, card cardToAdd)
@@ -47,11 +41,5 @@ public class board implements Serializable
     }
 
 
-    public card getCardFromDeck()
-    {
-        board playBoard = new board();
-        card newCardFromDeck = new card();
-        newCardFromDeck = playBoard.masterDeck.dealCardFromDeck();
-        return newCardFromDeck;
-    }
+    
 }

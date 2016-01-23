@@ -19,7 +19,7 @@ public class boardTest extends NinjaDocTester
     public void dealCardToBoard()
     {
         board playBoard = new board();
-        playBoard.addCardToColumn(0, playBoard.masterDeck.dealCardFromDeck());
+        playBoard.addCardToColumn(0, playBoard.masterDeck.deck_array[playBoard.masterDeck.randomInteger(0,52)]);
         assert playBoard.boardList.get(0).size() == 1;
     }
 
