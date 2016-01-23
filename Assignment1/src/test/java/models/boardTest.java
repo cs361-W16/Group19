@@ -16,14 +16,11 @@ public class boardTest extends NinjaDocTester
 {
 
     @Test
-    public void addFourCardsToBoard()
+    public void dealCardToBoard()
     {
         board playBoard = new board();
-        playBoard.addFourCardsToColumns();
-        assert playBoard.boardList.get(0).peekLast().num == 0;
-        assert playBoard.boardList.get(1).peekLast().num == 0;
-        assert playBoard.boardList.get(2).peekLast().num == 0;
-        assert playBoard.boardList.get(3).peekLast().num == 0;
+        playBoard.addCardToColumn(0, playBoard.masterDeck.deck_array[playBoard.masterDeck.randomInteger(0,52)]);
+        assert playBoard.boardList.get(0).size() == 1;
     }
 
     @Test

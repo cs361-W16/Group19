@@ -5,12 +5,12 @@ import java.util.Random;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class deck implements Serializable {
 
-
+public class deck implements Serializable
+{
     //initialize static array of 52 card objects
     card[] deck_array = new card[52];
-    int[] num = {2, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
+    int[] num = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
 
     public deck()
     {
@@ -45,7 +45,6 @@ public class deck implements Serializable {
             ++count3;
         }
 
-
         int count4 = 0;
         for(i=39;i<52;++i)
         {
@@ -72,5 +71,6 @@ public class deck implements Serializable {
     public int count() {
         return deck_array.length;
     }
+
 
 }

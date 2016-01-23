@@ -31,6 +31,24 @@ public class cardModelsTest {
            String suit = "heart";
         card mini_card = new card(9,"heart");
         assertEquals(1, mini_card.compare(num,suit));
+        }
+
+    @Test
+    public void compareCardsFail()
+    {
+        int num = 2;
+        String suit = "heart";
+        card compareCard = new card(2, "spade");
+        assertNotEquals(1, compareCard.compare(num,suit));
+    }
+
+    @Test
+    public void compareCardsNumFail()
+    {
+        int num = 3;
+        String suit = "heart";
+        card compareCard = new card(2, "heart");
+        assertNotEquals(1, compareCard.compare(num,suit));
     }
 
 }
