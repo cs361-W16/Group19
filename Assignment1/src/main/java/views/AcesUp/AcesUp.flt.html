@@ -89,7 +89,30 @@
 </table>
 
 <button id="dealButton">Deal</button>
+<button id="restartButton">Restart</button>
 
+<script>
+var game;
+
+$.getJSON("/AcesUp", function( data ) {
+  display(data);
+  game = data;
+});
+
+$("#restartButton").click(function(){
+  $.ajax({
+    type: "POST",
+    url: "restartAcesUp",
+    data: JSON.stringify(game), 
+    success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+      game = data;
+      display(data);},
+    contentType:"application/json; charset=utf-8",
+    dataType:"json",
+  });
+});
+
+</script>
 
 </body>
 </html>
