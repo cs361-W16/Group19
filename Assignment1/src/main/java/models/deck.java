@@ -10,7 +10,7 @@ public class deck implements Serializable {
 
     //initialize static array of 52 card objects
     card[] deck_array = new card[52];
-    int[] num = {2, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
+    int[] num = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
 
     public deck()
     {
@@ -56,7 +56,6 @@ public class deck implements Serializable {
 
     }
 
-    //deal
 
     public int randomInteger(int min, int max)
     {

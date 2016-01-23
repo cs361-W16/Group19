@@ -71,20 +71,20 @@ public class boardTest extends NinjaDocTester {
         // init board, check that selected column contains no cards
         board playBoard = new board();
 
-        //add card to column 0
         card addCard0 = new card(2, "hearts");
-        //card addCard1 = new card(12, "spades");
-        //card addCard2 = new card(8, "spades");
+        card addCard1 = new card(12, "spades");
+        card addCard2 = new card(8, "spades");
         playBoard.addCardToColumn(0, addCard0);
-        //playBoard.addCardToColumn(1, addCard1);
-        //playBoard.addCardToColumn(2, addCard2);
+        playBoard.addCardToColumn(1, addCard1);
+        playBoard.addCardToColumn(2, addCard2);
 
         // control - column 0 has a card
-        assert playBoard.boardList.get(0).peekFirst().num == 2;
-        assert playBoard.boardList.get(0).peekFirst().suit == "hearts";
+        //assert playBoard.boardList.get(0).peekFirst().num == 2;
+        //assert playBoard.boardList.get(0).peekFirst().suit == "hearts";
 
         //can we compare to null to check that a col is empty?
-        assert playBoard.boardList.get(3).peekFirst() == null;
+        //System.out.print(playBoard.boardList.get(2).peekFirst());
+        assert playBoard.boardList.get(3) == null;
     }
 
     /*@Test

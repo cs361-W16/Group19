@@ -32,6 +32,7 @@ public class board implements Serializable
         }
     }
 
+
     public void addFourCardsToColumns()
     {
         for (int i = 0; i < 4; i++)
@@ -53,3 +54,5 @@ public class board implements Serializable
         return newCardFromDeck;
     }
 }
+
+
