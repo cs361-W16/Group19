@@ -5,6 +5,7 @@ import java.util.Random;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+
 public class deck implements Serializable
 {
     //initialize static array of 52 card objects
@@ -39,6 +40,7 @@ public class deck implements Serializable
         int i;
         for(i=26;i<39;++i)
         {
+
             deck_array[i] = new card(num[count3], "diamond");
             ++count3;
         }
@@ -70,26 +72,5 @@ public class deck implements Serializable
         return deck_array.length;
     }
 
-    public card dealCardFromDeck()
-    {
-        if (count() == 0)
-            return null;
-
-        card dealtCard = new card();
-
-        int rInt = randomInteger(0,52);
-
-        if (deck_array[rInt].suit == null)
-        {
-            rInt = randomInteger(0,52);
-        }
-
-        dealtCard = deck_array[rInt];
-        deck_array[rInt].suit = null;
-        return dealtCard;
-
-
-
-    }
 
 }
