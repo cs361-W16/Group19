@@ -6,11 +6,10 @@ import org.junit.Test;
 
 import ninja.NinjaDocTester;
 
-/*
 
 Java test for board class
 
- */
+
 
 public class boardTest extends NinjaDocTester
 {
@@ -68,6 +67,5 @@ public class boardTest extends NinjaDocTester
         board playBoard = new board();
         assert playBoard.masterDeck.count() != 0;
     }
-
 
 }
